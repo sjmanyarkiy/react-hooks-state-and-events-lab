@@ -7,17 +7,21 @@ function Item({ name, category }) {
 
   function addToCart(){
 
-    setisInCart(!isInCart)
+    setisInCart((isInCart) => !isInCart)
 
   }
+
+  const addInCartClass = isInCart ? "in-cart" : ""
+
+  console.log(addInCartClass)
 
 
 
   return (
-    <li className="">
+    <li className={addInCartClass}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add" onClick={addToCart}>{isInCart ? "Remove From Cart" : "Add to Cart"}</button>
+      <button className="cart" onClick={addToCart}>{isInCart ? "Remove From Cart" : "Add to Cart"}</button>
     </li>
   );
 }

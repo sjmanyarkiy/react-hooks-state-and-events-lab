@@ -10,7 +10,7 @@ function App() {
   const [ isToggled, setToggle ] = useState(false)
 
   function isDark(){
-    setToggle(!isToggled)
+    setToggle((isInCart) => !isToggled)
   }
 
   const appClass = isToggled ? "App dark" : "App light"
